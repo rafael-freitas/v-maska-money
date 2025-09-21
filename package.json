@@ -1,0 +1,55 @@
+{
+  "name": "maska-money",
+  "version": "0.1.0",
+  "description": "Caret helper directive to work alongside v-maska",
+  "type": "module",
+  "main": "./dist/maska-money.umd.js",
+  "module": "./dist/maska-money.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/maska-money.es.js",
+      "require": "./dist/maska-money.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build && vue-tsc -p tsconfig.json",
+    "pack": "npm run build && npm pack",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "vue",
+    "directive",
+    "mask",
+    "maska",
+    "money",
+    "caret"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafael-freitas/v-maska-money.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rafael-freitas/v-maska-money/issues"
+  },
+  "homepage": "https://github.com/rafael-freitas/v-maska-money#readme",
+  "peerDependencies": {
+    "vue": ">=3.2.0"
+  },
+  "devDependencies": {
+    "vite": "^7",
+    "@vitejs/plugin-vue": "^6",
+    "typescript": "^5",
+    "vue-tsc": "^2",
+    "@vue/compiler-sfc": "^3",
+    "vue": "^3.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,10 @@
+.devcontainer/
+node_modules/
+dist/
+coverage/
+src/*.map
+src/*.js
+tests/**/*.map
+tests/**/*.js
+maska*.tgz
+.DS_Store
