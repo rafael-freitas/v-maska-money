@@ -109,7 +109,12 @@ export const MaskaMoneyCaretDirective = {
 
       switch (state.action) {
         case "insert":
-          targetDigitIndex = oldDigitsLeft + 1;
+          // Se campo estava vazio, posiciona caret no final após formatação
+          if (oldVal.trim() === "" || oldVal === "0" || oldVal === "0,00") {
+            targetDigitIndex = countDigitsLeft(newVal, newVal.length); // vai para o final
+          } else {
+            targetDigitIndex = oldDigitsLeft + 1;
+          }
           break;
         case "insert-replace":
           // remove os dígitos da seleção e adiciona o novo dígito
