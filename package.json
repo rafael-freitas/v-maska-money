@@ -1,6 +1,6 @@
 {
   "name": "maska-money",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Caret helper directive to work alongside v-maska",
   "type": "module",
   "main": "./dist/maska-money.umd.js",
