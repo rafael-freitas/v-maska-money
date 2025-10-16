@@ -117,9 +117,14 @@ export const MaskaMoneyCaretDirective = {
           }
           break;
         case "insert-replace":
-          // remove os dígitos da seleção e adiciona o novo dígito
-          targetDigitIndex = oldDigitsLeft - removedDigitsInSelection + 1;
-          if (targetDigitIndex < 0) targetDigitIndex = 0;
+          // Se todo o texto estava selecionado, posiciona no final
+          if (state.start === 0 && state.end === oldVal.length) {
+            targetDigitIndex = countDigitsLeft(newVal, newVal.length); // vai para o final
+          } else {
+            // remove os dígitos da seleção e adiciona o novo dígito
+            targetDigitIndex = oldDigitsLeft - removedDigitsInSelection + 1;
+            if (targetDigitIndex < 0) targetDigitIndex = 0;
+          }
           break;
         case "backspace":
           if (state.end > state.start) {
